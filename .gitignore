@@ -1,0 +1,23 @@
+# Виртуальное окружение
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Локальные базы данных (если появятся)
+*.db
+*.sqlite3
