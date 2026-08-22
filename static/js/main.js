@@ -11,7 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 nav.classList.remove('active');
                 burger.classList.remove('active');
                 burger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
             }
 
             target.scrollIntoView({
@@ -32,13 +31,6 @@ if (burger && nav) {
         nav.classList.toggle('active');
         burger.classList.toggle('active');
         burger.setAttribute('aria-expanded', isOpen.toString());
-
-        // Блокируем/разблокируем прокрутку страницы
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
     });
 
     // Закрытие меню при клике на ссылку (мобильные)
@@ -47,7 +39,6 @@ if (burger && nav) {
             nav.classList.remove('active');
             burger.classList.remove('active');
             burger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
         });
     });
 }
@@ -63,7 +54,6 @@ if (form) {
         if (!name || !contact || !agree) {
             e.preventDefault();
 
-            // Показываем ошибку
             let error = form.querySelector('.form-message.error');
             if (!error) {
                 error = document.createElement('div');
@@ -73,15 +63,12 @@ if (form) {
             error.textContent = 'Пожалуйста, заполните все обязательные поля и подтвердите согласие.';
             error.style.display = 'block';
 
-            // Подсвечиваем незаполненные поля
             if (!name) form.querySelector('#name').style.borderColor = 'var(--color-error)';
             if (!contact) form.querySelector('#contact').style.borderColor = 'var(--color-error)';
             if (!agree) form.querySelector('.checkbox-label').style.color = 'var(--color-error)';
-
             return;
         }
 
-        // Если Formspree не настроен — показываем сообщение
         const action = form.getAttribute('action');
         if (action.includes('YOUR_FORM_ID')) {
             e.preventDefault();
@@ -91,12 +78,11 @@ if (form) {
                 success.className = 'form-message success';
                 form.insertBefore(success, form.firstChild);
             }
-            success.textContent = 'Форма пока в демо-режиме. Чтобы заявки отправлялись, нужно подключить Formspree (см. инструкцию ниже).';
+            success.textContent = 'Форма пока в демо-режиме. Чтобы заявки отправлялись, нужно подключить Formspree.';
             success.style.display = 'block';
         }
     });
 
-    // Сброс ошибок при вводе
     form.querySelectorAll('input, textarea').forEach(input => {
         input.addEventListener('input', function() {
             this.style.borderColor = '';

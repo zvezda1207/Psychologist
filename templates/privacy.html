@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Политика конфиденциальности — Артем, клинический психолог</title>
-    <meta name="description" content="Политика обработки персональных данных в соответствии с ФЗ-152. Психолог Артем.">
+    <title>Политика конфиденциальности — Артём, клинический психолог</title>
+    <meta name="description" content="Политика обработки персональных данных в соответствии с ФЗ-152. Психолог Артём.">
     <meta name="robots" content="noindex, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- ★ Защита от мобильного скрытия меню на этой странице -->
+    <style>
+        @media (max-width: 1024px) {
+            .privacy-nav .nav-links {
+                position: static !important;
+                transform: none !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                width: auto !important;
+                height: auto !important;
+                background: transparent !important;
+                padding: 0 !important;
+                flex-direction: row !important;
+                gap: 20px !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .privacy-nav .nav-links a {
+                color: var(--color-text-light) !important;
+                font-size: 0.95rem !important;
+            }
+            .privacy-nav .nav-links a:hover {
+                color: var(--color-heading) !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
+    <!-- ★ Добавили класс privacy-nav, чтобы выделить эту навигацию -->
+    <nav class="navbar privacy-nav">
         <div class="container">
-            <a href="/" class="logo">Артем</a>
+            <a href="/" class="logo">Артём</a>
             <ul class="nav-links">
                 <li><a href="/">← На главную</a></li>
             </ul>
@@ -31,7 +60,7 @@
                     <h2>1. Общие положения</h2>
                     <p>
                         Настоящая Политика конфиденциальности персональных данных (далее — Политика) 
-                        действует в отношении всей информации, которую психолог Артем (далее — Оператор) 
+                        действует в отношении всей информации, которую психолог Артём (далее — Оператор) 
                         может получить о Пользователе во время использования сайта и при обращении за 
                         психологической помощью.
                     </p>
@@ -189,7 +218,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p class="copyright">© 2026 Артем. Клинический психолог.</p>
+                <p class="copyright">© 2026 Артём. Клинический психолог.</p>
             </div>
         </div>
     </footer>
