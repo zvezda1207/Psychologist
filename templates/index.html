@@ -6,7 +6,7 @@
     
     <!-- SEO -->
     <title>Артём — Клинический психолог, ACT | Тревога, социофобия, поиск себя</title>
-    <meta name="description" content="Клинический психолог Артём. Работаю в подходе ACT с тревогой, социофобией, выгоранием, перфекционизмом и поиском себя. Онлайн и очно. Нейроинклюзивно.">
+    <meta name="description" content="Клинический психолог Артём. Работаю в подходе ACT с тревогой, социофобией, выгоранием, перфекционизмом и поиском себя. Онлайн. Нейроинклюзивно.">
     <meta name="keywords" content="психолог, ACT, терапия принятия, тревога, социофобия, выгорание, нейроотличия, онлайн психолог">
     <meta name="author" content="Артём">
     <meta name="robots" content="index, follow">
@@ -32,6 +32,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Базовые стили для стрелок и слайдов (гарантируют работу карусели) -->
+    <style>
+        .carousel-slide { display: none; }
+        .carousel-slide.active { display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 20px; z-index: 10; display: flex; align-items: center; justify-content: center; }
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+        .slide-text { text-align: center; margin-bottom: 20px; }
+        .slide-text h3 { font-size: 1.4rem; margin-bottom: 8px; }
+        .slide-text .timeline-meta { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 8px; }
+        @media (max-width: 768px) { .carousel-btn { width: 30px; height: 30px; font-size: 16px; } }
+    </style>
 </head>
 <body>
 
@@ -40,7 +53,6 @@
         <div class="container">
             <a href="#hero" class="logo">Артём Ткачёв</a>
             
-            <!-- ★ Единственная кнопка открытия/закрытия -->
             <button class="burger" aria-label="Открыть меню" aria-expanded="false">
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
@@ -64,13 +76,8 @@
             <div class="hero-content">
                 <div class="hero-badge">Клинический психолог · ACT</div>
                 <h1>Артём</h1>
-                <p class="hero-subtitle">
-                    Помогаю тем, кто устал притворяться «нормальным»
-                </p>
-                <p class="hero-description">
-                    Работаю с тревогой, социофобией и поиском себя. 
-                    В подходе ACT — терапии принятия и ответственности.
-                </p>
+                <p class="hero-subtitle">Помогаю тем, кто устал притворяться «нормальным»</p>
+                <p class="hero-description">Работаю с тревогой, социофобией и поиском себя. В подходе ACT — терапии принятия и ответственности.</p>
                 <div class="hero-actions">
                     <a href="#contacts" class="btn btn-primary">Записаться на консультацию</a>
                     <a href="#about" class="btn btn-ghost">Узнать больше</a>
@@ -88,27 +95,12 @@
             <div class="about-grid">
                 <div class="about-text">
                     <h2>Обо мне</h2>
-                    <p class="lead">
-                        Меня зовут Артём. Я клинический психолог и специалист по терапии принятия 
-                        и ответственности (ACT).
-                    </p>
-                    <p>
-                        Мне близок язык искусства, кино и литературы — я часто мыслю образами и метафорами. 
-                        Поэтому в моей работе это естественным образом присутствует: через истории, примеры 
-                        из фильмов, визуальные образы. Не как метод, а как способ говорить о сложном — 
-                        проще и честнее.
-                    </p>
-                    <p>
-                        За пределами кабинета я увлекаюсь иностранными языками, парфюмерией и читаю 
-                        много художественной литературы.
-                    </p>
+                    <p class="lead">Меня зовут Артём. Я клинический психолог и специалист по терапии принятия и ответственности (ACT).</p>
+                    <p>Мне близок язык искусства, кино и литературы — я часто мыслю образами и метафорами. Поэтому в моей работе это естественным образом присутствует: не как метод, а как способ говорить о сложном — проще и честнее.</p>
+                    <p>За пределами кабинета я увлекаюсь иностранными языками, парфюмерией и читаю много художественной литературы.</p>
                 </div>
                 <div class="about-quote">
-                    <blockquote>
-                        «В моём кабинете нет «правильных» и «неправильных» слов. 
-                        Вы можете молчать, плакать, говорить сбивчиво, повторяться — 
-                        я не перебиваю и не оцениваю. Мы идём в вашем темпе.»
-                    </blockquote>
+                    <blockquote>«В моём кабинете нет «правильных» и «неправильных» слов. Вы можете молчать, плакать, говорить сбивчиво, повторяться — я не перебиваю и не оцениваю. Мы идём в вашем темпе.»</blockquote>
                 </div>
             </div>
         </div>
@@ -119,46 +111,16 @@
         <div class="container">
             <h2>С какими запросами я работаю</h2>
             <div class="requests-grid">
-                <div class="request-card">
-                    <div class="request-icon">🌿</div>
-                    <h3>Социофобия и страх оценки</h3>
-                    <p>Тревога в общении, страх показаться глупым, избегание социальных ситуаций</p>
-                </div>
-                <div class="request-card">
-                    <div class="request-icon">🪞</div>
-                    <h3>Ощущение «не такого»</h3>
-                    <p>Чувство, что ты «странный», «не вписываешься», «слишком чувствительный»</p>
-                </div>
-                <div class="request-card">
-                    <div class="request-icon">⏳</div>
-                    <h3>Прокрастинация и выгорание</h3>
-                    <p>Потеря смыслов, отсутствие энергии, ощущение, что жизнь проходит мимо</p>
-                </div>
-                <div class="request-card">
-                    <div class="request-icon">⚖️</div>
-                    <h3>Перфекционизм и самокритика</h3>
-                    <p>Внутренний тиран, который не даёт дышать, ошибка = катастрофа</p>
-                </div>
-                <div class="request-card">
-                    <div class="request-icon">🧭</div>
-                    <h3>Поиск себя и ценностей</h3>
-                    <p>«Я не знаю, кто я», «Что я хочу на самом деле», ощущение чужой жизни</p>
-                </div>
+                <div class="request-card"><div class="request-icon">🌿</div><h3>Тревога и панические атаки</h3><p>Тревога, страхи, социофобия, панические атаки</p></div>
+                <div class="request-card"><div class="request-icon">🔥</div><h3>Депрессия и выгорание</h3><p>Депрессивные состояния, апатия, выгорание</p></div>
+                <div class="request-card"><div class="request-icon">⚖️</div><h3>Перфекционизм и самокритика</h3><p>Перфекционизм, самокритика, синдром самозванца</p></div>
+                <div class="request-card"><div class="request-icon">🧭</div><h3>Поиск себя</h3><p>Трудности с самооценкой, поиск себя, экзистенциальные кризисы</p></div>
+                <div class="request-card"><div class="request-icon">🪞</div><h3>Границы и одиночество</h3><p>Нарушения границ, созависимость, одиночество</p></div>
+                <div class="request-card"><div class="request-icon">⏳</div><h3>Прокрастинация</h3><p>Прокрастинация, импульсивность, проблемы с самоконтролем</p></div>
+                <div class="request-card"><div class="request-icon">💆</div><h3>Психосоматика</h3><p>Психосоматика (головные боли, СРК, кожные реакции)</p></div>
+                <div class="request-card"><div class="request-icon">🧠</div><h3>Нейроотличия</h3><p>Нейроотличия (сенсорные перегрузки, маскинг, усталость от социальных контактов)</p></div>
             </div>
-
-            <div class="neuro-box">
-                <h3>🧠 Важное уточнение про нейроотличия</h3>
-                <p>
-                    Я обладаю <strong>рас-информированностью</strong> — понимаю внутреннюю логику, 
-                    сенсорные перегрузки, маскинг и усталость от социальных контактов, характерные 
-                    для нейроотличных людей.
-                </p>
-                <p>
-                    Если вы ищете терапевта, который не будет учить вас «быть нормальным», 
-                    а поможет адаптировать мир под вас — я готов быть этим терапевтом. 
-                    В рамках своей компетенции и с привлечением супервизии при необходимости.
-                </p>
-            </div>
+            <p class="approximate-note">* Список запросов примерный. Если вы не нашли свой — напишите мне, и мы обсудим, смогу ли я вам помочь.</p>
         </div>
     </section>
 
@@ -168,39 +130,16 @@
             <div class="work-grid">
                 <div class="work-text">
                     <h2>Как я работаю</h2>
-                    <p class="lead">
-                        Я работаю в подходе ACT — это не про «избавься от тревоги», 
-                        а про то, как научиться жить с ней в контакте и при этом делать то, 
-                        что для вас важно.
-                    </p>
+                    <p class="lead">Я работаю в подходе ACT — это не про «избавься от тревоги», а про то, как научиться жить с ней в контакте и при этом делать то, что для вас важно.</p>
                     <div class="work-features">
-                        <div class="feature">
-                            <span class="feature-check">✓</span>
-                            <p>На консультациях нет «правильных» и «неправильных» слов</p>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-check">✓</span>
-                            <p>Вы можете молчать, плакать, говорить сбивчиво, повторяться</p>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-check">✓</span>
-                            <p>Я не перебиваю и не оцениваю — мы идём в вашем темпе</p>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-check">✓</span>
-                            <p>Использую образы, метафоры и примеры из кино и литературы</p>
-                        </div>
+                        <div class="feature"><span class="feature-check">✓</span><p>На консультациях нет «правильных» и «неправильных» слов</p></div>
+                        <div class="feature"><span class="feature-check">✓</span><p>Вы можете молчать, плакать, говорить сбивчиво, повторяться</p></div>
+                        <div class="feature"><span class="feature-check">✓</span><p>Я не перебиваю и не оцениваю — мы идём в вашем темпе</p></div>
+                        <div class="feature"><span class="feature-check">✓</span><p>Использую образы, метафоры и примеры из кино и литературы</p></div>
                     </div>
                 </div>
                 <div class="work-visual">
-                    <div class="work-card">
-                        <h4>Что такое ACT?</h4>
-                        <p>
-                            Acceptance and Commitment Therapy — терапия, которая учит принимать 
-                            сложные переживания вместо борьбы с ними и строить жизнь в соответствии 
-                            с вашими ценностями, а не правилами «как надо».
-                        </p>
-                    </div>
+                    <div class="work-card"><h4>Что такое ACT?</h4><p>Acceptance and Commitment Therapy — терапия, которая учит принимать сложные переживания вместо борьбы с ними и строить жизнь в соответствии с вашими ценностями, а не правилами «как надо».</p></div>
                 </div>
             </div>
         </div>
@@ -210,118 +149,80 @@
     <section id="contacts" class="section bg-warm">
         <div class="container">
             <h2>Как записаться</h2>
-            <p class="section-lead">
-                Я понимаю, что для человека с социофобией написать сообщение психологу — это уже подвиг. 
-                Поэтому варианты связи — от самого простого к самому безопасному.
-            </p>
-
+            <div class="social-note"><p>Я понимаю, что для человека с <strong>социофобией</strong> написать сообщение психологу — это уже подвиг. Поэтому варианты связи — от самого простого к самому безопасному.</p></div>
             <div class="contact-steps">
                 <div class="contact-step">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Самый простой</h3>
-                        <p>Напишите в Telegram или WhatsApp — даже одним словом «Привет». Я отвечу и возьму инициативу в переписке на себя.</p>
-                        <a href="https://t.me/liblikassid" class="btn btn-small" target="_blank">Написать в Telegram</a>
-                    </div>
+                    <div class="step-content"><h3>Самый простой</h3><p>Напишите в Telegram или WhatsApp даже одним словом «Привет» — я отвечу, и мы вместе подберём удобное время.</p><a href="https://t.me/liblikassid" class="btn btn-small btn-outline" target="_blank">Написать в Telegram</a></div>
                 </div>
-
                 <div class="contact-step">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Если голосом легче</h3>
-                        <p>Позвоните. Я всегда говорю спокойно и без оценки.</p>
-                        <a href="tel:+79526041865" class="btn btn-small btn-outline">Позвонить</a>
-                    </div>
-                </div>
-
-                <div class="contact-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Если совсем не хочется контактировать</h3>
-                        <p>Заполните форму ниже, и я напишу вам сам в удобное время.</p>
-                        <a href="#contact-form" class="btn btn-small btn-outline">Заполнить форму</a>
-                    </div>
+                    <div class="step-content"><h3>Если совсем не хочется контактировать</h3><p>Если совсем не хочется контактировать лично, заполните форму ниже — просто оставьте свой контакт, я напишу вам сам, и мы договоримся о времени.</p><a href="#contact-form" class="btn btn-small btn-outline">Заполнить форму</a></div>
                 </div>
             </div>
-
-            <!-- Форма обратной связи -->
             <div id="contact-form" class="contact-form-wrapper">
                 <h3>Оставить заявку</h3>
                 <p class="form-hint">Заполните поля ниже — я свяжусь с вами сам. Никаких обязательств.</p>
-                
-                <!-- Замени action на свой Formspree-URL -->
                 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="feedbackForm">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Как к вам обращаться</label>
-                            <input type="text" id="name" name="name" placeholder="Можно псевдоним" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact">Контакт для связи</label>
-                            <input type="text" id="contact" name="contact" placeholder="Telegram, WhatsApp или email" required>
-                        </div>
+                        <div class="form-group"><label for="name">Как к вам обращаться</label><input type="text" id="name" name="name" placeholder="Можно псевдоним" required></div>
+                        <div class="form-group"><label for="contact">Контакт для связи</label><input type="text" id="contact" name="contact" placeholder="Telegram, WhatsApp или email" required></div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Что вас беспокоит <span class="optional">(необязательно)</span></label>
-                        <textarea id="message" name="message" rows="4" placeholder="Можно написать кратко или оставить пустым..."></textarea>
-                    </div>
+                    <div class="form-group"><label for="message">Что вас беспокоит <span class="optional">(необязательно)</span></label><textarea id="message" name="message" rows="4" placeholder="Можно написать кратко или оставить пустым..."></textarea></div>
                     <div class="form-privacy">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="agree" required>
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text">
-                                Я согласен(а) с <a href="/privacy" target="_blank">политикой конфиденциальности</a> 
-                                и обработкой моих персональных данных
-                            </span>
-                        </label>
+                        <label class="checkbox-label"><input type="checkbox" name="agree" required><span class="checkmark"></span><span class="checkbox-text">Я согласен(а) с <a href="/privacy" target="_blank">политикой конфиденциальности</a> и обработкой моих персональных данных</span></label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
                     <p class="form-security">🔒 Ваши данные передаются по защищённому соединению и не передаются третьим лицам.</p>
                 </form>
             </div>
-
-            <div class="format-note">
-                <p>
-                    💬 Консультации проходят <strong>онлайн (Zoom / Skype)</strong> или 
-                    <strong>очно в моём кабинете</strong>. Выбирайте то, что вам комфортнее.
-                </p>
-            </div>
+            <div class="format-note"><p>💬 Консультации проходят <strong>онлайн (Яндекс.Телемост)</strong>.</p></div>
         </div>
     </section>
 
-    <!-- Образование -->
+    <!-- ОБРАЗОВАНИЕ: ИНЛАЙНОВЫЕ СТИЛИ ДЛЯ ПОЛНОГО ОБХОДА КЭША -->
     <section id="education" class="section">
         <div class="container">
             <h2>Образование</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Клиническая психология</h3>
-                        <span class="timeline-meta">Южный федеральный университет, 2026 г.</span>
-                        <p>Диплом по специальности «Клиническая психология»</p>
+            
+            <div class="education-carousel" style="position: relative; max-width: 100%; margin: 0 auto;">
+                <button class="carousel-btn prev" aria-label="Назад">‹</button>
+                <div class="carousel-track" style="overflow: hidden; width: 100%;">
+                    
+                    <!-- 1. Удостоверение -->
+                    <div class="carousel-slide active" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>Терапия принятия и ответственности (ACT)</h3>
+                            <span class="timeline-meta">(Чистые Когниции, 2026)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/udostoverenie.jpg') }}" alt="Удостоверение" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Терапия принятия и ответственности (ACT)</h3>
-                        <span class="timeline-meta">Терапия принятия и ответственности, 2026 г.</span>
-                        <p>Базовый курс по ACT-подходу</p>
+
+                    <!-- 2. Диплом -->
+                    <div class="carousel-slide" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>Клиническая психология</h3>
+                            <span class="timeline-meta">(Южный федеральный университет, 2026)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/diplom.jpg') }}" alt="Диплом" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Постоянное развитие</h3>
-                        <span class="timeline-meta">Регулярно</span>
-                        <p>Прохожу супервизию и личную терапию для поддержания качества работы</p>
+
+                    <!-- 3. Сертификат -->
+                    <div class="carousel-slide" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>Внешний облик в детско-родительских и семейных отношениях</h3>
+                            <span class="timeline-meta">(Мастер-класс ЮФУ, 2019)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/sertifikat.jpg') }}" alt="Сертификат" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
                     </div>
+
                 </div>
+                <button class="carousel-btn next" aria-label="Вперёд">›</button>
             </div>
 
-            <div class="diplomas-note">
-                <p>📄 Дипломы и сертификаты можно посмотреть по запросу — напишите, и я пришлю фотографии.</p>
+            <div class="education-item--wide" style="margin-top: 40px; text-align: center; padding: 30px; background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow);">
+                <h3>Постоянное развитие</h3>
+                <p>Регулярно прохожу супервизию и личную терапию</p>
             </div>
         </div>
     </section>
@@ -332,27 +233,18 @@
             <h2>Стоимость</h2>
             <div class="price-cards">
                 <div class="price-card main">
-                    <div class="price-header">
-                        <h3>Индивидуальная консультация</h3>
-                        <div class="price-value">2 500 ₽</div>
-                    </div>
+                    <div class="price-header"><h3>Индивидуальная консультация</h3><div class="price-value">2 500 ₽</div></div>
                     <div class="price-body">
                         <ul class="price-features">
                             <li>Длительность — 60 минут</li>
-                            <li>Онлайн (Zoom / Skype)</li>
-                            <li>Очно в кабинете</li>
+                            <li>Онлайн (Яндекс.Телемост)</li>
                             <li>Первичная диагностика и дальнейшая работа</li>
                         </ul>
                     </div>
-                    <div class="price-footer">
-                        <a href="#contacts" class="btn btn-primary btn-full">Записаться</a>
-                    </div>
+                    <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Записаться</a></div>
                 </div>
             </div>
-            <p class="price-note">
-                Стоимость единая для онлайн и очного формата. Первичная консультация 
-                оплачивается так же, как и последующие.
-            </p>
+            <p class="price-note">Стоимость единая для онлайн и очного формата. Первичная консультация оплачивается так же, как и последующие.</p>
         </div>
     </section>
 
@@ -360,36 +252,47 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-info">
-                    <h3>Артём</h3>
-                    <p>Клинический психолог · ACT</p>
-                </div>
+                <div class="footer-info"><h3>Артём</h3><p>Клинический психолог · ACT</p></div>
                 <div class="footer-contacts">
                     <h4>Контакты</h4>
                     <p><a href="tel:+79526041865">+7 952 604-18-65</a></p>
-                    <p><a href="https://t.me/liblikassid" target="_blank">Telegram</a> · 
-                       <a href="https://wa.me/79526041865" target="_blank">WhatsApp</a></p>
-                    <p><a href="mailto:artem.psychologist@mail.ru">artem.psychologist@mail.ru</a></p>
+                    <p><a href="https://t.me/liblikassid" target="_blank">Telegram</a> · <a href="https://wa.me/79526041865" target="_blank">WhatsApp</a></p>
+                    <p><a href="mailto:liblikas.veen@gmail.com">liblikas.veen@gmail.com</a></p>
                 </div>
-                <div class="footer-address">
-                    <h4>Формат</h4>
-                    <p>Онлайн (Zoom / Skype)</p>
-                    <p>Очно — по адресу кабинета</p>
-                </div>
+                <div class="footer-address"><h4>Формат</h4><p>Онлайн (Яндекс.Телемост)</p></div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-links">
-                    <a href="/privacy">Политика конфиденциальности</a>
-                </div>
-                <p class="small">
-                    Обращаю внимание: я не работаю с острыми психотическими состояниями и суицидальным поведением. 
-                    В кризисной ситуации не стоит откладывать обращение за помощью: свяжитесь с кризисной службой или проконсультируйтесь с врачом‑психиатром.
-                </p>
+                <div class="footer-links"><a href="/privacy">Политика конфиденциальности</a></div>
+                <p class="small">Обращаю внимание: я не работаю с острыми психотическими состояниями и суицидальным поведением. В кризисной ситуации не стоит откладывать обращение за помощью: свяжитесь с кризисной службой или проконсультируйтесь с врачом‑психиатром.</p>
                 <p class="copyright">© 2026 Артём. Клинический психолог.</p>
             </div>
         </div>
     </footer>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <!-- СКРИПТ КАРУСЕЛИ -->
+    <script>
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        if (slides.length > 0) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+        }
+    </script>
 </body>
 </html>

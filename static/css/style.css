@@ -1703,3 +1703,123 @@ h1, h2, h3, h4 {
 .price-header {
     background-color: #2F5233 !important;
 }
+
+/* ============================================
+   НОВЫЕ СТИЛИ ПО ЗАДАНИЮ ЗАКАЗЧИКА
+   ============================================ */
+
+/* Увеличение шрифта по сайту */
+.section p {
+    font-size: 1.05rem;
+}
+
+.lead {
+    font-size: 1.3rem;
+}
+
+.request-card p,
+.contact-step p,
+.price-features li {
+    font-size: 1.05rem;
+}
+
+/* Примечание о примерности списка */
+.approximate-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-top: 24px;
+}
+
+/* Выделенный блок для социофобов */
+.social-note {
+    background: var(--color-bg-sage);
+    border-left: 4px solid var(--color-accent);
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-heading);
+    box-shadow: var(--shadow);
+}
+
+.social-note strong {
+    color: var(--color-accent-dark);
+}
+
+/* Сетка образования с фото */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.education-item {
+    background: var(--color-white);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--color-accent);
+}
+
+.education-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.education-item p {
+    margin-bottom: 20px;
+}
+
+.certificate-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    background: var(--color-bg);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ИСПРАВЛЕНИЕ ДЛЯ БЛОКА "ОБО МНЕ"
+   ============================================ */
+
+/* Делаем подзаголовок "Меня зовут Артём..." единым с текстом, но чуть крупнее */
+.lead {
+    font-family: var(--font-body) !important; /* Основной шрифт (Inter), как и у остального текста */
+    font-size: 1.15rem !important;            /* Чуть крупнее (стандартный текст 1.05rem) */
+    color: var(--color-text) !important;      /* Цвет обычного текста */
+    font-weight: 500 !important;              /* Немного жирнее для акцента */
+}
+
+/* Стили для фото документов */
+.education-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--color-white);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.certificate-photo {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.certificate-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-border);
+}
