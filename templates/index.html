@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO -->
     <title>Артём — Клинический психолог, ACT | Тревога, социофобия, поиск себя</title>
     <meta name="description" content="Клинический психолог Артём. Работаю в подходе ACT с тревогой, социофобией, выгоранием, перфекционизмом и поиском себя. Онлайн. Нейроинклюзивно.">
     <meta name="keywords" content="психолог, ACT, терапия принятия, тревога, социофобия, выгорание, нейроотличия, онлайн психолог">
     <meta name="author" content="Артём">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="Артём — Клинический психолог, ACT">
     <meta property="og:description" content="Помогаю тем, кто устал притворяться «нормальным». Работаю с тревогой, социофобией и поиском себя.">
     <meta property="og:type" content="website">
@@ -19,21 +17,19 @@
     <meta property="og:image" content="https://artem-psycholog.ru/static/images/og-image.jpg">
     <meta property="og:locale" content="ru_RU">
     
-    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Артём — Клинический психолог, ACT">
     <meta name="twitter:description" content="Помогаю тем, кто устал притворяться «нормальным».">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     
-    <!-- Fonts -->
+    <!-- НОВЫЕ ШРИФТЫ: CAVEAT (с нормальной заглавной А) + NUNITO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <!-- Базовые стили для стрелок и слайдов (гарантируют работу карусели) -->
     <style>
         .carousel-slide { display: none; }
         .carousel-slide.active { display: block; }
@@ -48,7 +44,6 @@
 </head>
 <body>
 
-    <!-- Навигация -->
     <nav class="navbar">
         <div class="container">
             <a href="#hero" class="logo">Артём Ткачёв</a>
@@ -70,7 +65,7 @@
         </div>
     </nav>
 
-    <!-- Главный экран -->
+    <!-- Главный экран (Убрано фото Артема, оставлен текст на фоне) -->
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -83,13 +78,10 @@
                     <a href="#about" class="btn btn-ghost">Узнать больше</a>
                 </div>
             </div>
-            <div class="hero-photo">
-                <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Артём — клинический психолог" loading="lazy">
-            </div>
         </div>
     </section>
 
-    <!-- Обо мне -->
+    <!-- Обо мне (Добавлено фото Артема и цитата) -->
     <section id="about" class="section">
         <div class="container">
             <div class="about-grid">
@@ -99,8 +91,12 @@
                     <p>Мне близок язык искусства, кино и литературы — я часто мыслю образами и метафорами. Поэтому в моей работе это естественным образом присутствует: не как метод, а как способ говорить о сложном — проще и честнее.</p>
                     <p>За пределами кабинета я увлекаюсь иностранными языками, парфюмерией и читаю много художественной литературы.</p>
                 </div>
-                <div class="about-quote">
-                    <blockquote>«В моём кабинете нет «правильных» и «неправильных» слов. Вы можете молчать, плакать, говорить сбивчиво, повторяться — я не перебиваю и не оцениваю. Мы идём в вашем темпе.»</blockquote>
+                <div class="about-side">
+                    <!-- ФОТО АРТЕМА ПЕРЕНОСИМ СЮДА -->
+                    <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Артём — клинический психолог" class="about-photo" loading="lazy">
+                    <div class="about-quote">
+                        <blockquote>«В моём кабинете нет «правильных» и «неправильных» слов. Вы можете молчать, плакать, говорить сбивчиво, повторяться — я не перебиваю и не оцениваю. Мы идём в вашем темпе.»</blockquote>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,14 +107,51 @@
         <div class="container">
             <h2>С какими запросами я работаю</h2>
             <div class="requests-grid">
-                <div class="request-card"><div class="request-icon">🌿</div><h3>Тревога и панические атаки</h3><p>Тревога, страхи, социофобия, панические атаки</p></div>
-                <div class="request-card"><div class="request-icon">🔥</div><h3>Депрессия и выгорание</h3><p>Депрессивные состояния, апатия, выгорание</p></div>
-                <div class="request-card"><div class="request-icon">⚖️</div><h3>Перфекционизм и самокритика</h3><p>Перфекционизм, самокритика, синдром самозванца</p></div>
-                <div class="request-card"><div class="request-icon">🧭</div><h3>Поиск себя</h3><p>Трудности с самооценкой, поиск себя, экзистенциальные кризисы</p></div>
-                <div class="request-card"><div class="request-icon">🪞</div><h3>Границы и одиночество</h3><p>Нарушения границ, созависимость, одиночество</p></div>
-                <div class="request-card"><div class="request-icon">⏳</div><h3>Прокрастинация</h3><p>Прокрастинация, импульсивность, проблемы с самоконтролем</p></div>
-                <div class="request-card"><div class="request-icon">💆</div><h3>Психосоматика</h3><p>Психосоматика (головные боли, СРК, кожные реакции)</p></div>
-                <div class="request-card"><div class="request-icon">🧠</div><h3>Нейроотличия</h3><p>Нейроотличия (сенсорные перегрузки, маскинг, усталость от социальных контактов)</p></div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-munch" src="{{ url_for('static', filename='images/req_munch.jpg') }}" alt="Тревога"></div>
+                    <h3>Тревога и панические атаки</h3>
+                    <p>Тревога, страхи, социофобия, панические атаки</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-ophelia" src="{{ url_for('static', filename='images/req_ophelia.jpg') }}" alt="Депрессия"></div>
+                    <h3>Депрессия и выгорание</h3>
+                    <p>Депрессивные состояния, апатия, выгорание</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-flowers" src="{{ url_for('static', filename='images/req_flowers.jpg') }}" alt="Перфекционизм"></div>
+                    <h3>Перфекционизм и самокритика</h3>
+                    <p>Перфекционизм, самокритика, синдром самозванца</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-picasso" src="{{ url_for('static', filename='images/req_picasso.jpg') }}" alt="Самооценка"></div>
+                    <h3>Трудности с самооценкой</h3>
+                    <p>Трудности с самооценкой, неуверенность в себе</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-two_women" src="{{ url_for('static', filename='images/req_two_women.jpg') }}" alt="Поиск себя"></div>
+                    <h3>Поиск себя</h3>
+                    <p>Экзистенциальные кризисы, поиск своего пути, потеря смысла</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-magritte" src="{{ url_for('static', filename='images/req_magritte.jpg') }}" alt="Границы"></div>
+                    <h3>Границы и одиночество</h3>
+                    <p>Нарушения границ, созависимость, одиночество</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-couch" src="{{ url_for('static', filename='images/req_couch.jpg') }}" alt="Прокрастинация"></div>
+                    <h3>Прокрастинация</h3>
+                    <p>Прокрастинация, импульсивность, проблемы с самоконтролем</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-monet" src="{{ url_for('static', filename='images/req_monet.jpg') }}" alt="Психосоматика"></div>
+                    <h3>Психосоматика</h3>
+                    <p>Психосоматика (головные боли, СРК, кожные реакции)</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-amelie" src="{{ url_for('static', filename='images/req_amelie.jpg') }}" alt="Нейроотличия"></div>
+                    <h3>Нейроотличия</h3>
+                    <p>Нейроотличия (сенсорные перегрузки, маскинг, усталость от социальных контактов)</p>
+                </div>
             </div>
             <p class="approximate-note">* Список запросов примерный. Если вы не нашли свой — напишите мне, и мы обсудим, смогу ли я вам помочь.</p>
         </div>
@@ -180,7 +213,7 @@
         </div>
     </section>
 
-    <!-- ОБРАЗОВАНИЕ: ИНЛАЙНОВЫЕ СТИЛИ ДЛЯ ПОЛНОГО ОБХОДА КЭША -->
+    <!-- Образование -->
     <section id="education" class="section">
         <div class="container">
             <h2>Образование</h2>
@@ -189,17 +222,8 @@
                 <button class="carousel-btn prev" aria-label="Назад">‹</button>
                 <div class="carousel-track" style="overflow: hidden; width: 100%;">
                     
-                    <!-- 1. Удостоверение -->
+                    <!-- 1. ДИПЛОМ (Первый) -->
                     <div class="carousel-slide active" style="text-align: center;">
-                        <div class="slide-text">
-                            <h3>Терапия принятия и ответственности (ACT)</h3>
-                            <span class="timeline-meta">(Чистые Когниции, 2026)</span>
-                        </div>
-                        <img src="{{ url_for('static', filename='images/udostoverenie.jpg') }}" alt="Удостоверение" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-                    </div>
-
-                    <!-- 2. Диплом -->
-                    <div class="carousel-slide" style="text-align: center;">
                         <div class="slide-text">
                             <h3>Клиническая психология</h3>
                             <span class="timeline-meta">(Южный федеральный университет, 2026)</span>
@@ -207,7 +231,16 @@
                         <img src="{{ url_for('static', filename='images/diplom.jpg') }}" alt="Диплом" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
                     </div>
 
-                    <!-- 3. Сертификат -->
+                    <!-- 2. УДОСТОВЕРЕНИЕ (Второй) -->
+                    <div class="carousel-slide" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>Терапия принятия и ответственности (ACT)</h3>
+                            <span class="timeline-meta">(Чистые Когниции, 2026)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/udostoverenie.jpg') }}" alt="Удостоверение" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    </div>
+
+                    <!-- 3. СЕРТИФИКАТ -->
                     <div class="carousel-slide" style="text-align: center;">
                         <div class="slide-text">
                             <h3>Внешний облик в детско-родительских и семейных отношениях</h3>
@@ -218,6 +251,12 @@
 
                 </div>
                 <button class="carousel-btn next" aria-label="Вперёд">›</button>
+                
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                </div>
             </div>
 
             <div class="education-item--wide" style="margin-top: 40px; text-align: center; padding: 30px; background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow);">
@@ -233,12 +272,11 @@
             <h2>Стоимость</h2>
             <div class="price-cards">
                 <div class="price-card main">
-                    <div class="price-header"><h3>Индивидуальная консультация</h3><div class="price-value">2 500 ₽</div></div>
+                    <div class="price-header"><h3>Индивидуальная консультация</h3><div class="price-value">3 000 ₽</div></div>
                     <div class="price-body">
                         <ul class="price-features">
                             <li>Длительность — 60 минут</li>
                             <li>Онлайн (Яндекс.Телемост)</li>
-                            <li>Первичная диагностика и дальнейшая работа</li>
                         </ul>
                     </div>
                     <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Записаться</a></div>
@@ -248,7 +286,7 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Футер (теперь светло-зеленый) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -271,16 +309,23 @@
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     
-    <!-- СКРИПТ КАРУСЕЛИ -->
     <script>
         const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.querySelector('.carousel-btn.prev');
         const nextBtn = document.querySelector('.carousel-btn.next');
         let currentSlide = 0;
 
+        function updateDots() {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             slides[index].classList.add('active');
+            currentSlide = index;
+            updateDots();
         }
 
         if (slides.length > 0) {
@@ -291,6 +336,12 @@
             nextBtn.addEventListener('click', () => {
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    showSlide(parseInt(dot.getAttribute('data-slide')));
+                });
             });
         }
     </script>
