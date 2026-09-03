@@ -4,7 +4,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            // Закрываем бургер, если открыт
             const nav = document.querySelector('.nav-links');
             const burger = document.querySelector('.burger');
             if (nav && nav.classList.contains('active')) {
@@ -33,7 +32,6 @@ if (burger && nav) {
         burger.setAttribute('aria-expanded', isOpen.toString());
     });
 
-    // Закрытие меню при клике на ссылку (мобильные)
     nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('active');
@@ -99,15 +97,25 @@ if (form) {
     }
 }
 
-// Карусель в секции "Образование"
+// ★ КАРУСЕЛЬ С ТОЧКАМИ (Перенесена сюда для надежности)
 const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.carousel-dot');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 let currentSlide = 0;
 
+function updateDots() {
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('active');
+    }
+}
+
 function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
     slides[index].classList.add('active');
+    currentSlide = index;
+    updateDots();
 }
 
 if (slides.length > 0) {
@@ -118,5 +126,11 @@ if (slides.length > 0) {
     nextBtn.addEventListener('click', () => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
     });
 }
