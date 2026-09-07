@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Политика конфиденциальности — Артем, клинический психолог</title>
-    <meta name="description" content="Политика обработки персональных данных в соответствии с ФЗ-152. Психолог Артем.">
+    <title>Политика конфиденциальности — Артём, клинический психолог</title>
+    <meta name="description" content="Политика обработки персональных данных в соответствии с ФЗ-152. Психолог Артём.">
     <meta name="robots" content="noindex, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <style>
+        .lang-switch { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; margin-left: 24px; display: flex; align-items: center; gap: 4px; }
+        .lang-switch a { color: var(--color-text-light); text-decoration: none; transition: color 0.3s; }
+        .lang-switch a:hover { color: var(--color-heading); }
+        .lang-switch a.lang-active { color: var(--color-accent); border-bottom: 2px solid var(--color-accent); }
+        @media (max-width: 1024px) { .lang-switch { position: fixed; top: 16px; right: 80px; z-index: 999999; font-size: 1.4rem; } }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="logo">Артем</a>
+            <a href="/" class="logo">Артём</a>
             <ul class="nav-links">
                 <li><a href="/">← На главную</a></li>
             </ul>
+            <div class="lang-switch">
+                <a href="/privacy" class="lang-active">RU</a>
+                <span>|</span>
+                <a href="/privacy_en">EN</a>
+            </div>
         </div>
     </nav>
 
@@ -30,7 +43,7 @@
             <div class="privacy-content">
                 <section>
                     <h2>1. Общие положения</h2>
-                    <p>Настоящая Политика конфиденциальности персональных данных (далее — Политика) действует в отношении всей информации, которую психолог Артем (далее — Оператор) может получить о Пользователе во время использования сайта и при обращении за психологической помощью.</p>
+                    <p>Настоящая Политика конфиденциальности персональных данных (далее — Политика) действует в отношении всей информации, которую психолог Артём (далее — Оператор) может получить о Пользователе во время использования сайта и при обращении за психологической помощью.</p>
                     <p>Использование сайта означает безоговорочное согласие Пользователя с настоящей Политикой и указанными в ней условиями обработки его персональных данных. В случае несогласия с условиями Политики Пользователь должен воздержаться от использования сайта и отправки персональных данных.</p>
                 </section>
 
@@ -138,7 +151,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p class="copyright">© 2026 Артем. Клинический психолог.</p>
+                <p class="copyright">© 2026 Артём. Клинический психолог.</p>
             </div>
         </div>
     </footer>

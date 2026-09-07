@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Artem — Clinical Psychologist, ACT | Anxiety, Social Phobia, Finding Self</title>
+    <meta name="description" content="Clinical psychologist Artem. I work using ACT with anxiety, social phobia, burnout, perfectionism and the search for self. Online. Neuroinclusive.">
+    <meta name="keywords" content="psychologist, ACT, acceptance and commitment therapy, anxiety, social phobia, burnout, neurodivergence, online psychologist">
+    <meta name="author" content="Artem">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Artem — Clinical Psychologist, ACT">
+    <meta property="og:description" content="Helping those tired of pretending to be 'normal'. Working with anxiety, social phobia and the search for self.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artem-psycholog.ru/">
+    <meta property="og:image" content="https://artem-psycholog.ru/static/images/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Artem — Clinical Psychologist, ACT">
+    <meta name="twitter:description" content="Helping those tired of pretending to be 'normal'.">
+    
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Styles for carousel and language switch -->
+    <style>
+        .carousel-slide { display: none; }
+        .carousel-slide.active { display: block; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #A51C30; color: #fff; border: none; border-radius: 50%; width: 55px; height: 55px; cursor: pointer; font-size: 2.5rem; font-weight: 700; z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(165, 28, 48, 0.3); }
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+        .slide-text { text-align: center; margin-bottom: 20px; }
+        .slide-text h3 { font-size: 2.5rem; margin-bottom: 8px; }
+        .slide-text .timeline-meta { font-size: 1.8rem; color: #7A1523; font-weight: 700; margin-bottom: 8px; }
+        @media (max-width: 768px) { .carousel-btn { width: 40px; height: 40px; font-size: 1.8rem; } }
+        
+        .lang-switch { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; margin-left: 24px; display: flex; align-items: center; gap: 4px; }
+        .lang-switch a { color: var(--color-text-light); text-decoration: none; transition: color 0.3s; }
+        .lang-switch a:hover { color: var(--color-heading); }
+        .lang-switch a.lang-active { color: var(--color-accent); border-bottom: 2px solid var(--color-accent); }
+        @media (max-width: 1024px) { .lang-switch { position: fixed; top: 16px; right: 80px; z-index: 999999; font-size: 1.4rem; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">Artem Tkachev</a>
+            
+            <button class="burger" aria-label="Open menu" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#requests">Requests</a></li>
+                <li><a href="#work">How I Work</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#price">Pricing</a></li>
+                <li><a href="#contacts" class="nav-cta">Book Now</a></li>
+            </ul>
+
+            <!-- ★ LANGUAGE SWITCH -->
+            <div class="lang-switch">
+                <a href="/">RU</a>
+                <span>|</span>
+                <a href="/en" class="lang-active">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Clinical Psychologist · ACT</div>
+                <h1>Artem</h1>
+                <p class="hero-subtitle">Helping those tired of pretending to be «normal»</p>
+                <p class="hero-description">I work with anxiety, social phobia and the search for self. Using ACT — Acceptance and Commitment Therapy.</p>
+                <div class="hero-actions">
+                    <a href="#contacts" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#about" class="btn btn-ghost">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-warm">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p class="lead">My name is Artem. I am a clinical psychologist and a specialist in Acceptance and Commitment Therapy (ACT).</p>
+                    
+                    <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Artem" class="about-photo-mobile" loading="lazy">
+                    
+                    <p>I am close to the language of art, cinema and literature — I often think in images and metaphors. This is naturally present in my work: not as a method, but as a way to talk about complex things simply and honestly.</p>
+                    <p>Outside of the office, I am interested in foreign languages, perfumery and read a lot of fiction.</p>
+                    
+                    <div class="about-quote">
+                        <blockquote>«In my office, there are no 'right' or 'wrong' words. You can be silent, cry, speak incoherently, repeat yourself — I don't interrupt or judge. We go at your pace.»</blockquote>
+                    </div>
+                </div>
+                
+                <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Artem" class="about-photo-desktop" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="requests" class="section bg-sage">
+        <div class="container">
+            <h2>What Requests I Work With</h2>
+            <div class="requests-grid">
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-munch" src="{{ url_for('static', filename='images/req_munch.jpg') }}" alt="Anxiety"></div>
+                    <h3>Anxiety and Panic Attacks</h3>
+                    <p>Anxiety, fears, social phobia, panic attacks</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-ophelia" src="{{ url_for('static', filename='images/req_ophelia.jpg') }}" alt="Depression"></div>
+                    <h3>Depression and Burnout</h3>
+                    <p>Depressive states, apathy, burnout</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-flowers" src="{{ url_for('static', filename='images/req_flowers.jpg') }}" alt="Perfectionism"></div>
+                    <h3>Perfectionism and Self-Criticism</h3>
+                    <p>Perfectionism, self-criticism, imposter syndrome</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-picasso" src="{{ url_for('static', filename='images/req_picasso.jpg') }}" alt="Self-esteem"></div>
+                    <h3>Self-Esteem Issues</h3>
+                    <p>Low self-esteem, lack of confidence</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-two_women" src="{{ url_for('static', filename='images/req_two_women.jpg') }}" alt="Finding Self"></div>
+                    <h3>Search for Self</h3>
+                    <p>Existential crises, finding one's path, loss of meaning</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-magritte" src="{{ url_for('static', filename='images/req_magritte.jpg') }}" alt="Boundaries"></div>
+                    <h3>Boundaries and Loneliness</h3>
+                    <p>Boundary violations, codependency, loneliness</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-couch" src="{{ url_for('static', filename='images/req_couch.jpg') }}" alt="Procrastination"></div>
+                    <h3>Procrastination</h3>
+                    <p>Procrastination, impulsivity, self-control issues</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-monet" src="{{ url_for('static', filename='images/req_monet.jpg') }}" alt="Psychosomatics"></div>
+                    <h3>Psychosomatics</h3>
+                    <p>Psychosomatics (headaches, IBS, skin reactions)</p>
+                </div>
+                <div class="request-card">
+                    <div class="request-icon"><img id="req-img-amelie" src="{{ url_for('static', filename='images/req_amelie.jpg') }}" alt="Neurodivergence"></div>
+                    <h3>Neurodivergence</h3>
+                    <p>Neurodivergence (sensory overload, masking, social fatigue)</p>
+                </div>
+            </div>
+            <p class="approximate-note">* This list is approximate. If you don't see your issue here, write to me and we will discuss if I can help.</p>
+        </div>
+    </section>
+
+    <section id="work" class="section bg-warm">
+        <div class="container">
+            <div class="work-grid">
+                <div class="work-text">
+                    <h2>How I Work</h2>
+                    <p class="lead">I work using ACT. It's not about "getting rid of anxiety", but about learning to live with it and doing what is important to you.</p>
+                    <div class="work-features">
+                        <div class="feature"><span class="feature-check">✓</span><p>No "right" or "wrong" words in sessions</p></div>
+                        <div class="feature"><span class="feature-check">✓</span><p>You can be silent, cry, speak incoherently, repeat yourself</p></div>
+                        <div class="feature"><span class="feature-check">✓</span><p>I don't interrupt or judge — we go at your pace</p></div>
+                        <div class="feature"><span class="feature-check">✓</span><p>I use images, metaphors and examples from cinema and literature</p></div>
+                    </div>
+                </div>
+                <div class="work-visual">
+                    <div class="work-card"><h4>What is ACT?</h4><p>Acceptance and Commitment Therapy — a therapy that teaches you to accept difficult experiences instead of fighting them, and to build a life according to your values, not rules of "how it should be".</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="section bg-warm">
+        <div class="container">
+            <h2>How to Book</h2>
+            <div class="social-note"><p>I understand that for a person with <strong>social phobia</strong> writing to a psychologist is already a feat. That's why the contact options are from the simplest to the safest.</p></div>
+            <div class="contact-steps">
+                <div class="contact-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content"><h3>Simplest</h3><p>Write to Telegram or WhatsApp even with one word "Hi" — I will reply and we will find a convenient time together.</p><a href="https://t.me/liblikassid" class="btn btn-small btn-outline" target="_blank">Write to Telegram</a></div>
+                </div>
+                <div class="contact-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content"><h3>If you don't want to contact</h3><p>If you don't want to contact directly, fill out the form below — just leave your contact info, I will write to you myself and we will agree on a time.</p><a href="#contact-form" class="btn btn-small btn-outline">Fill out the form</a></div>
+                </div>
+            </div>
+            <div id="contact-form" class="contact-form-wrapper">
+                <h3>Leave a Request</h3>
+                <p class="form-hint">Fill in the fields below — I will contact you myself. No obligations.</p>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="feedbackForm">
+                    <div class="form-row">
+                        <div class="form-group"><label for="name">What should I call you</label><input type="text" id="name" name="name" placeholder="You can use a pseudonym" required></div>
+                        <div class="form-group"><label for="contact">Contact for communication</label><input type="text" id="contact" name="contact" placeholder="Telegram, WhatsApp or email" required></div>
+                    </div>
+                    <div class="form-group"><label for="message">What bothers you <span class="optional">(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="You can write briefly or leave it empty..."></textarea></div>
+                    <div class="form-privacy">
+                        <label class="checkbox-label"><input type="checkbox" name="agree" required><span class="checkmark"></span><span class="checkbox-text">I agree with the <a href="/privacy_en" target="_blank">privacy policy</a> and the processing of my personal data</span></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Request</button>
+                    <p class="form-security">🔒 Your data is transmitted over a secure connection and is not shared with third parties.</p>
+                </form>
+            </div>
+            <div class="format-note"><p>💬 Sessions are held <strong>online (Yandex.Telemost)</strong>.</p></div>
+        </div>
+    </section>
+
+    <section id="education" class="section bg-warm">
+        <div class="container">
+            <h2>Education</h2>
+            
+            <div class="education-carousel" style="position: relative; max-width: 100%; margin: 0 auto;">
+                <button class="carousel-btn prev" aria-label="Back">‹</button>
+                <div class="carousel-track" style="overflow: hidden; width: 100%;">
+                    <div class="carousel-slide active" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>Clinical Psychology</h3>
+                            <span class="timeline-meta">(Southern Federal University, 2026)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/diplom.jpg') }}" alt="Diploma" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    </div>
+                    <div class="carousel-slide" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>Acceptance and Commitment Therapy (ACT)</h3>
+                            <span class="timeline-meta">(Clean Cognitions, 2026)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/udostoverenie.jpg') }}" alt="Certificate" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    </div>
+                    <div class="carousel-slide" style="text-align: center;">
+                        <div class="slide-text">
+                            <h3>External appearance in child-parent and family relations</h3>
+                            <span class="timeline-meta">(Master class SFU, 2019)</span>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/sertifikat.jpg') }}" alt="Certificate" style="display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next">›</button>
+                
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                </div>
+            </div>
+
+            <div class="education-item--wide" style="margin-top: 40px; text-align: center; padding: 30px; background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow);">
+                <h3>Continuous Development</h3>
+                <p>I regularly undergo supervision and personal therapy</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="price" class="section bg-sage">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="price-cards">
+                <div class="price-card main">
+                    <div class="price-header"><h3>Individual Consultation</h3><div class="price-value">3 000 ₽</div></div>
+                    <div class="price-body">
+                        <ul class="price-features">
+                            <li>Duration — 60 minutes</li>
+                            <li>Online (Yandex.Telemost)</li>
+                        </ul>
+                    </div>
+                    <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Book Now</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info"><h3>Artem</h3><p>Clinical Psychologist · ACT</p></div>
+                <div class="footer-contacts">
+                    <h4>Contacts</h4>
+                    <p><a href="tel:+79526041865">+7 952 604-18-65</a></p>
+                    <p><a href="https://t.me/liblikassid" target="_blank">Telegram</a> · <a href="https://wa.me/79526041865" target="_blank">WhatsApp</a></p>
+                    <p><a href="mailto:liblikas.veen@gmail.com">liblikas.veen@gmail.com</a></p>
+                </div>
+                <div class="footer-address"><h4>Format</h4><p>Online (Yandex.Telemost)</p></div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links"><a href="/privacy_en">Privacy Policy</a></div>
+                <p class="copyright">© 2026 Artem. Clinical Psychologist.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>    
+    
+</body>
+</html>
