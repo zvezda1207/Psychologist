@@ -96,34 +96,10 @@ a:hover { color: var(--color-accent-dark); }
 .nav-links .nav-cta:hover { background: var(--color-accent-dark); }
 .nav-links .nav-cta::after { display: none; }
 
-/* ГЛАВНЫЙ ЭКРАН: Высота на весь экран + Параллакс */
-.hero { 
-    padding: 0; 
-    position: relative; 
-    overflow: hidden; 
-    /* ★ Возвращаем fixed (параллакс) и ставим позиционирование center top, чтобы небо было видно */
-    background: url('/static/images/hero_bg.jpg') center top / cover no-repeat fixed; 
-    /* ★ Увеличиваем высоту на весь экран (100vh), как на вашем скрине */
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center; 
-}
+/* ГЛАВНЫЙ ЭКРАН */
+.hero { padding: 0; position: relative; overflow: hidden; background: url('/static/images/hero_bg.jpg') center top / cover no-repeat fixed; min-height: 100vh; display: flex; align-items: center; }
 .hero .container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-
-/* ★ БЕЙДЖ: УСИЛЕННАЯ ЖИРНОСТЬ И РАЗМЕР */
-.hero-badge { 
-    display: inline-block; 
-    background: var(--color-nav); 
-    color: var(--color-accent); 
-    padding: 12px 30px; 
-    border-radius: 50px; 
-    font-family: var(--font-heading); 
-    font-size: 1.6rem; 
-    font-weight: 800; 
-    letter-spacing: 0.02em; 
-    margin-bottom: 24px; 
-}
-
+.hero-badge { display: inline-block; background: var(--color-nav); color: var(--color-accent); padding: 12px 30px; border-radius: 50px; font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; letter-spacing: 0.02em; margin-bottom: 24px; }
 .hero h1 { font-family: var(--font-heading); font-size: 5rem; margin-bottom: 16px; color: var(--color-nav); }
 .hero-subtitle { font-family: var(--font-heading); font-size: 2.6rem; color: var(--color-nav); line-height: 1.4; margin-bottom: 20px; }
 .hero-description { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-nav); margin-bottom: 36px; max-width: 480px; line-height: 1.5; font-weight: 500; }
@@ -134,26 +110,62 @@ a:hover { color: var(--color-accent-dark); }
 .section h2 { font-size: 4rem; margin-bottom: 48px; text-align: center; }
 .bg-sage { background: var(--color-bg-sage); }
 .bg-warm { background: var(--color-bg-warm); }
-
 .lead { font-family: var(--font-body); font-size: 2rem; line-height: 1.5; margin-bottom: 20px; font-weight: 700; color: var(--color-heading); }
 .section-lead { text-align: center; font-family: var(--font-body); font-size: 1.8rem; max-width: 700px; margin: -24px auto 48px; line-height: 1.7; font-weight: 600; }
 
-/* ОБО МНЕ: НОВАЯ СТРУКТУРА */
+/* ★ ИСПРАВЛЕНИЕ ОБЩЕГО ТЕКСТА: Выравнивание по ширине, чтобы строки не обрывались */
+.about-text p, .work-text p, .social-note p, .contact-step p, .format-note p, .privacy-content p, .privacy-content li {
+    text-align: justify;
+}
+
+/* ОБО МНЕ */
 .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: start; }
-.about-text h2 { text-align: left; margin-bottom: 32px; }
-.about-text p { margin-bottom: 16px; font-size: 1.6rem; color: var(--color-text); }
 
-/* Фото для мобильной версии (скрыто на десктопе) */
-.about-photo-mobile { display: none; width: 100%; max-width: 500px; margin: 20px auto; border-radius: var(--radius); box-shadow: var(--shadow-hover); object-fit: cover; border: 5px solid var(--color-white); }
+/* ★ НОВОЕ ПРАВИЛО ДЛЯ РОДИТЕЛЯ .about-text */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует все дочерние блоки (включая цитату) */
+    text-align: left;
+}
 
-/* Фото для десктопной версии (показывается на десктопе) */
-.about-photo-desktop { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-hover); object-fit: cover; border: 5px solid var(--color-white); align-self: start; }
+.about-text h2 { text-align: left; width: 100%; margin-bottom: 32px; }
+.about-text p { margin-bottom: 16px; font-size: 1.6rem; color: var(--color-text); width: 100%; text-align: justify; }
 
-/* Цитата теперь внутри текстового блока */
-.about-quote { position: relative; padding: 30px 24px; background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--color-accent); margin-top: 20px; }
-.about-quote blockquote { font-family: var(--font-heading); font-size: 1.9rem; line-height: 1.6; color: var(--color-text); font-weight: 700; }
+.about-photo-mobile { display: none; width: 100%; max-width: 500px; margin: 20px auto; border-radius: var(--radius); box-shadow: var(--shadow-hover); object-fit: cover; }
+.about-photo-desktop { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-hover); object-fit: cover; align-self: start; margin-top: 85px; }
 
-/* ЗАПРОСЫ */
+/* ЦИТАТА */
+.about-quote {
+    position: relative;
+    padding: 30px 24px;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--color-accent);
+    width: auto !important;
+    max-width: 600px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 40px !important; /* ★ Отступ сверху */
+    margin-bottom: 20px !important;
+    align-self: center !important;
+    text-align: center !important;
+}
+
+.about-quote blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    font-weight: 700;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+/* ЗАПРОСЫ: Двухколоночная сетка на мобильных (Flexbox для центрирования последней карточки) */
 .requests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 48px; }
 .request-card { background: var(--color-white); padding: 0; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
 .request-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
@@ -170,33 +182,28 @@ a:hover { color: var(--color-accent-dark); }
 #req-img-monet { object-position: center 50%; }
 #req-img-amelie { object-position: center 45%; }
 
-.request-card h3 {
-    font-size: 2.2rem;
-    line-height: 1.15; /* ★ Уменьшаем расстояние между строками */
-    margin: 20px 20px 10px;
-}
-.request-card p { color: var(--color-text); font-size: 1.4rem; line-height: 1.6; margin: 0 20px 20px; font-weight: 700; }
+.request-card h3 { font-size: 2.2rem; line-height: 1.15; margin: 20px 20px 10px; }
+.request-card p { color: var(--color-text); font-size: 1.4rem; line-height: 1.6; margin: 0 20px 20px; font-weight: 400; text-align: justify; }
 .approximate-note { text-align: center; font-style: italic; color: var(--color-heading); font-size: 1.4rem; font-weight: 700; margin-top: 24px; }
 
-/* КАК Я РАБОТАЮ */
-.work-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: start; }
+/* КАК Я РАБОТАЮ: В одну колонку */
+.work-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
 .work-text h2 { text-align: left; margin-bottom: 32px; }
 .work-features { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
 .feature { display: flex; align-items: flex-start; gap: 14px; }
 .feature-check { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; min-width: 30px; background: var(--color-accent); color: var(--color-white); border-radius: 50%; font-size: 1rem; margin-top: 2px; }
 .feature p { color: var(--color-text); line-height: 1.6; font-size: 1.6rem; }
-.work-visual { position: sticky; top: 120px; }
-.work-card { background: var(--color-white); padding: 36px; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid var(--color-accent); }
-.work-card h4 { font-size: 2.2rem; margin-bottom: 16px; }
-.work-card p { font-family: var(--font-heading); color: var(--color-text-light); line-height: 1.7; font-size: 1.7rem; font-weight: 700; }
-.work-photo { 
-    display: block; 
-    width: 100%; 
-    max-width: 100%; 
-    margin-top: 35px; /* ★ УВЕЛИЧИВАЕМ ОТСТУП ДО 35px (было 24px) */
-    border-radius: var(--radius); 
-    box-shadow: var(--shadow); 
-    object-fit: cover; 
+.work-visual { position: static; max-width: 100%; margin-top: 20px; }
+.work-card { background: var(--color-white); padding: 36px; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid var(--color-accent); text-align: center; }
+.work-card h4 { font-size: 2.2rem; margin-bottom: 16px; text-align: center; }
+.work-card p { font-family: var(--font-heading); color: var(--color-text-light); line-height: 1.7; font-size: 1.7rem; font-weight: 700; text-align: center; }
+
+/* Основное правило для мобильных и планшетов (возвращаем размер 100%) */
+.work-photo { display: block; width: 100%; max-width: 100%; margin: 35px auto 0; border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; }
+
+/* Правило для десктопа - уменьшаем фото на четверть (до 75%) */
+@media (min-width: 1025px) {
+    .work-photo { max-width: 75%; }
 }
 
 /* КАК ЗАПИСАТЬСЯ */
@@ -255,47 +262,19 @@ a:hover { color: var(--color-accent-dark); }
 .carousel-dot.active { background: var(--color-accent); }
 
 /* СТОИМОСТЬ */
-.price-cards { display: flex; justify-content: center; }
+.price-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+.price-cards { display: flex; justify-content: center; width: 100%; }
 .price-card.main { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow-hover); max-width: 420px; width: 100%; overflow: hidden; border: 1px solid var(--color-border); }
 .price-header { background-color: var(--color-accent); color: var(--color-white); padding: 36px 32px; text-align: center; }
-.price-header h3 { color: var(--color-white); font-size: 2.2rem; margin-bottom: 12px; }
-.price-value { font-size: 5rem !important; font-weight: 700; color: var(--color-white) !important; }
+.price-header h3 { color: var(--color-white); font-size: 1.8rem; margin-bottom: 12px; }
+.price-value { font-size: 4rem !important; font-weight: 700; color: var(--color-white) !important; }
 .price-body { padding: 32px; }
 .price-features { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-.price-features li { padding-left: 28px; position: relative; font-family: var(--font-heading); color: var(--color-text); font-size: 1.8rem; font-weight: 700; }
+.price-features li { padding-left: 28px; position: relative; font-size: 1.4rem; font-weight: 700; }
 .price-features li::before { content: '✓'; position: absolute; left: 0; color: var(--color-accent); font-weight: 700; }
 .price-footer { padding: 0 32px 32px; }
-.price-note { text-align: center; margin-top: 32px; color: var(--color-heading); font-size: 1.7rem; font-weight: 700; }
-/* Стили для новой структуры цены (фото справа) */
-.price-layout { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 50px; 
-    align-items: center; 
-    max-width: 900px; 
-    margin: 0 auto; 
-}
-
-.price-photo { 
-    width: 100%; 
-    max-width: 380px; /* ★ НЕМНОГО УМЕНЬШАЕМ */
-    justify-self: end; /* ★ ПРИЖИМАЕМ К ПРАВОМУ КРАЮ */
-    border-radius: var(--radius); 
-    box-shadow: var(--shadow); 
-    border: 5px solid var(--color-white); 
-}
-
-/* Мобильная версия: фото вниз по центру */
-@media (max-width: 768px) {
-    .price-layout { 
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-    }
-    .price-photo { 
-        justify-self: center; 
-        max-width: 100%; 
-    }
-}
+.price-note { display: none; }
+.price-photo { width: 100%; max-width: 100%; justify-self: end; border-radius: var(--radius); box-shadow: var(--shadow); }
 
 /* ФУТЕР */
 .footer { background: var(--color-bg-sage); color: var(--color-text); padding: 64px 0 32px; }
@@ -312,16 +291,16 @@ a:hover { color: var(--color-accent-dark); }
 .footer-links a:hover { opacity: 1; text-decoration: underline; color: var(--color-accent-dark); }
 .copyright { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-text); font-weight: 700; margin-top: 24px; }
 
-/* ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ */
+/* ПОЛИТИКА */
 .privacy-page { padding: 60px 0 80px; background: var(--color-bg); }
 .privacy-page h1 { font-size: 3rem; text-align: center; margin-bottom: 8px; }
-.privacy-date { font-family: var(--font-body); text-align: center; color: var(--color-text-light); font-size: 1.4rem; margin-bottom: 48px; }
+.privacy-date { text-align: center; color: var(--color-text-light); font-size: 1.2rem; margin-bottom: 48px; }
 .privacy-content { max-width: 800px; margin: 0 auto; background: var(--color-white); padding: 48px; border-radius: var(--radius); box-shadow: var(--shadow); }
 .privacy-content section { margin-bottom: 36px; }
-.privacy-content h2 { font-size: 2.2rem; text-align: center; margin-bottom: 16px; color: var(--color-heading); }
-.privacy-content p { font-family: var(--font-body); margin-bottom: 12px; color: var(--color-text); line-height: 1.7; text-align: justify; text-indent: 2em; }
-.privacy-content ul { margin-left: 20px; margin-bottom: 16px; }
-.privacy-content li { font-family: var(--font-body); margin-bottom: 8px; color: var(--color-text); line-height: 1.6; }
+.privacy-content h2 { font-size: 2rem; text-align: center; margin-bottom: 16px; color: var(--color-heading); }
+.privacy-content p { margin-bottom: 12px; color: var(--color-text); line-height: 1.7; text-align: justify; text-indent: 2em; }
+.privacy-content ul { list-style: disc; margin-left: 20px; padding-left: 20px; margin-bottom: 16px; }
+.privacy-content ul li { margin-bottom: 10px; color: var(--color-text); line-height: 1.7; padding-left: 0; }
 .privacy-content a { text-decoration: underline; }
 
 /* АДАПТИВ */
@@ -336,7 +315,6 @@ a:hover { color: var(--color-accent-dark); }
     .hero-actions { justify-content: center; }
     .about-grid { grid-template-columns: 1fr; gap: 32px; }
     .work-grid { grid-template-columns: 1fr; gap: 40px; }
-    .work-visual { position: static; max-width: 500px; margin: 0 auto; }
     .contact-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .contact-step { padding: 28px 20px; }
     .burger { display: flex; position: fixed !important; top: 16px !important; right: 20px !important; z-index: 999999 !important; background: var(--color-nav); box-shadow: var(--shadow); }
@@ -355,7 +333,23 @@ a:hover { color: var(--color-accent-dark); }
     .footer-links a { font-size: 1.8rem !important; }
     .footer-links { margin-bottom: 0 !important; }
     .copyright { font-size: 1.5rem !important; margin-top: 16px !important; }
+    
+    /* ★ МОБИЛЬНАЯ СЕТКА КАРТОЧЕК: Использование flex для центрирования последней */
+    .requests-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .request-card { width: calc(50% - 6px); margin-bottom: 0; }
+    .request-card:last-child { margin-left: auto; margin-right: auto; }
+    .request-icon { height: 150px; }
+    .request-card h3 { font-size: 1.4rem; margin: 10px 10px 6px; line-height: 1.1; }
+    .request-card p { font-size: 1.0rem; margin: 0 10px 14px; line-height: 1.3; }
+    #req-img-ophelia { object-position: center 30%; }
+    #req-img-couch { object-position: center 45%; transform: scale(1.1); }
+
+    /* ★ ФИКС СТРАНИЦЫ ЦЕНЫ НА МОБИЛЬНЫХ: Все в одну колонку */
+    .price-layout { grid-template-columns: 1fr; gap: 30px; }
+    .price-photo { justify-self: center; max-width: 100%; }
+    .price-card.main { max-width: 100%; }
 }
+
 @media (max-width: 900px) {
     .hero .container { grid-template-columns: 1fr; text-align: center; gap: 48px; }
     .hero h1 { font-size: 3.5rem; }
@@ -363,22 +357,25 @@ a:hover { color: var(--color-accent-dark); }
     .hero-description { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
     .about-grid { grid-template-columns: 1fr; }
-    /* ★ ПОКАЗЫВАЕМ МОБИЛЬНОЕ ФОТО И СКРЫВАЕМ ДЕСКТОПНОЕ */
     .about-photo-mobile { display: block; }
     .about-photo-desktop { display: none; }
     .section { padding: 64px 0; }
     .section h2 { font-size: 3.2rem; }
     .contact-steps { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto 40px; }
 }
+
 @media (max-width: 768px) {
     .hero h1 { font-size: 3rem; }
     .hero-badge { font-size: 1.4rem; }
-    .requests-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto 40px; }
     .contact-form-wrapper { padding: 32px 24px; }
     .form-row { grid-template-columns: 1fr; }
     .privacy-content { padding: 32px 24px; }
     .privacy-page h1 { font-size: 2.2rem; }
+    
+    /* ★ УМЕНЬШЕНИЕ ШРИФТА В "КАК Я РАБОТАЮ" */
+    .work-text .lead { font-size: 1.5rem !important; line-height: 1.4; }
 }
+
 @media (max-width: 480px) {
     body { font-size: 1.4rem; }
     .container { padding: 0 16px; }

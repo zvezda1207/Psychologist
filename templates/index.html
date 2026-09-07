@@ -91,6 +91,7 @@
         </div>
     </section>
 
+    <!-- Обо мне -->
     <section id="about" class="section bg-warm">
         <div class="container">
             <div class="about-grid">
@@ -102,13 +103,14 @@
                     
                     <p>Мне близок язык искусства, кино и литературы — я часто мыслю образами и метафорами. Поэтому в моей работе это естественным образом присутствует: не как метод, а как способ говорить о сложном — проще и честнее.</p>
                     <p>За пределами кабинета я увлекаюсь иностранными языками, парфюмерией и читаю много художественной литературы.</p>
-                    
-                    <div class="about-quote">
-                        <blockquote>«В моём кабинете нет «правильных» и «неправильных» слов. Вы можете молчать, плакать, говорить сбивчиво, повторяться — я не перебиваю и не оцениваю. Мы идём в вашем темпе.»</blockquote>
-                    </div>
                 </div>
                 
                 <img src="{{ url_for('static', filename='images/artem_book.jpg') }}" alt="Артём" class="about-photo-desktop" loading="lazy">
+            </div>
+
+            <!-- Цитата вынесена отдельно и будет по центру -->
+            <div class="about-quote">
+                <blockquote>«В моём кабинете нет «правильных» и «неправильных» слов. Вы можете молчать, плакать, говорить сбивчиво, повторяться — я не перебиваю и не оцениваю. Мы идём в вашем темпе.»</blockquote>
             </div>
         </div>
     </section>
@@ -180,10 +182,11 @@
                         <div class="feature"><span class="feature-check">✓</span><p>Использую образы, метафоры и примеры из кино и литературы</p></div>
                     </div>
                 </div>
+                
+                <!-- Всё в одну колонку: текст, потом цитата, потом фото -->
                 <div class="work-visual">
                     <div class="work-card"><h4>Что такое ACT?</h4><p>Acceptance and Commitment Therapy — терапия, которая учит принимать сложные переживания вместо борьбы с ними и строить жизнь в соответствии с вашими ценностями, а не правилами «как надо».</p></div>
                     
-                    <!-- ★ НОВОЕ ФОТО ПОД ЦИТАТОЙ -->
                     <img src="{{ url_for('static', filename='images/museum_run.jpg') }}" alt="Люди бегут по музею" class="work-photo" loading="lazy">
                 </div>
             </div>
@@ -273,7 +276,6 @@
         <div class="container">
             <h2>Стоимость</h2>
             
-            <!-- ★ НОВАЯ ОБЕРТКА: Слева карточка, справа фото -->
             <div class="price-layout">
                 <div class="price-cards">
                     <div class="price-card main">
@@ -288,11 +290,9 @@
                     </div>
                 </div>
                 
-                <!-- ФОТО ЕЖИК -->
                 <img src="{{ url_for('static', filename='images/hedgehog_face.jpg') }}" alt="Лицо с ежиком" class="price-photo">
             </div>
             
-            <p class="price-note">Стоимость единая для онлайн и очного формата. Первичная консультация оплачивается так же, как и последующие.</p>
         </div>
     </section>
 
