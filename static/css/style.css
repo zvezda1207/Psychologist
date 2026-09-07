@@ -189,6 +189,15 @@ a:hover { color: var(--color-accent-dark); }
 .work-card { background: var(--color-white); padding: 36px; border-radius: var(--radius); box-shadow: var(--shadow); border-top: 4px solid var(--color-accent); }
 .work-card h4 { font-size: 2.2rem; margin-bottom: 16px; }
 .work-card p { font-family: var(--font-heading); color: var(--color-text-light); line-height: 1.7; font-size: 1.7rem; font-weight: 700; }
+.work-photo { 
+    display: block; 
+    width: 100%; 
+    max-width: 100%; 
+    margin-top: 35px; /* ★ УВЕЛИЧИВАЕМ ОТСТУП ДО 35px (было 24px) */
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow); 
+    object-fit: cover; 
+}
 
 /* КАК ЗАПИСАТЬСЯ */
 #contacts.section.bg-warm { background: linear-gradient(rgba(244, 231, 216, 0.9), rgba(244, 231, 216, 0.9)), url('/static/images/contact_umbrella.jpg') center/cover no-repeat; }
@@ -257,6 +266,36 @@ a:hover { color: var(--color-accent-dark); }
 .price-features li::before { content: '✓'; position: absolute; left: 0; color: var(--color-accent); font-weight: 700; }
 .price-footer { padding: 0 32px 32px; }
 .price-note { text-align: center; margin-top: 32px; color: var(--color-heading); font-size: 1.7rem; font-weight: 700; }
+/* Стили для новой структуры цены (фото справа) */
+.price-layout { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px; 
+    align-items: center; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.price-photo { 
+    width: 100%; 
+    max-width: 380px; /* ★ НЕМНОГО УМЕНЬШАЕМ */
+    justify-self: end; /* ★ ПРИЖИМАЕМ К ПРАВОМУ КРАЮ */
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow); 
+    border: 5px solid var(--color-white); 
+}
+
+/* Мобильная версия: фото вниз по центру */
+@media (max-width: 768px) {
+    .price-layout { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+    .price-photo { 
+        justify-self: center; 
+        max-width: 100%; 
+    }
+}
 
 /* ФУТЕР */
 .footer { background: var(--color-bg-sage); color: var(--color-text); padding: 64px 0 32px; }

@@ -100,7 +100,8 @@
                     <h2>About Me</h2>
                     <p class="lead">My name is Artem. I am a clinical psychologist and a specialist in Acceptance and Commitment Therapy (ACT).</p>
                     
-                    <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Artem" class="about-photo-mobile" loading="lazy">
+                    <!-- ★ ОБНОВЛЕНО: artem_book.jpg вместо photo.jpg -->
+                    <img src="{{ url_for('static', filename='images/artem_book.jpg') }}" alt="Artem" class="about-photo-mobile" loading="lazy">
                     
                     <p>I am close to the language of art, cinema and literature — I often think in images and metaphors. This is naturally present in my work: not as a method, but as a way to talk about complex things simply and honestly.</p>
                     <p>Outside of the office, I am interested in foreign languages, perfumery and read a lot of fiction.</p>
@@ -110,7 +111,8 @@
                     </div>
                 </div>
                 
-                <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Artem" class="about-photo-desktop" loading="lazy">
+                <!-- ★ ОБНОВЛЕНО: artem_book.jpg вместо photo.jpg -->
+                <img src="{{ url_for('static', filename='images/artem_book.jpg') }}" alt="Artem" class="about-photo-desktop" loading="lazy">
             </div>
         </div>
     </section>
@@ -184,6 +186,9 @@
                 </div>
                 <div class="work-visual">
                     <div class="work-card"><h4>What is ACT?</h4><p>Acceptance and Commitment Therapy — a therapy that teaches you to accept difficult experiences instead of fighting them, and to build a life according to your values, not rules of "how it should be".</p></div>
+                    
+                    <!-- ★ ДОБАВЛЕНО: Фото бегущих по музею -->
+                    <img src="{{ url_for('static', filename='images/museum_run.jpg') }}" alt="People running through the museum" class="work-photo" loading="lazy">
                 </div>
             </div>
         </div>
@@ -271,18 +276,27 @@
     <section id="price" class="section bg-sage">
         <div class="container">
             <h2>Pricing</h2>
-            <div class="price-cards">
-                <div class="price-card main">
-                    <div class="price-header"><h3>Individual Consultation</h3><div class="price-value">3 000 ₽</div></div>
-                    <div class="price-body">
-                        <ul class="price-features">
-                            <li>Duration — 60 minutes</li>
-                            <li>Online (Yandex.Telemost)</li>
-                        </ul>
+            
+            <!-- ★ ДОБАВЛЕНА НОВАЯ СТРУКТУРА price-layout -->
+            <div class="price-layout">
+                <div class="price-cards">
+                    <div class="price-card main">
+                        <div class="price-header"><h3>Individual Consultation</h3><div class="price-value">3 000 ₽</div></div>
+                        <div class="price-body">
+                            <ul class="price-features">
+                                <li>Duration — 60 minutes</li>
+                                <li>Online (Yandex.Telemost)</li>
+                            </ul>
+                        </div>
+                        <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Book Now</a></div>
                     </div>
-                    <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Book Now</a></div>
                 </div>
+                
+                <!-- ★ ДОБАВЛЕНО: Фото с ежиком -->
+                <img src="{{ url_for('static', filename='images/hedgehog_face.jpg') }}" alt="Face with a hedgehog" class="price-photo">
             </div>
+            
+            <p class="price-note">The price is the same for online and in-person formats. The initial consultation is paid the same as subsequent ones.</p>
         </div>
     </section>
 

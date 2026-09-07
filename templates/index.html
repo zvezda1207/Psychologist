@@ -29,7 +29,6 @@
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <!-- Обновленные стили карусели -->
     <style>
         .carousel-slide { display: none; }
         .carousel-slide.active { display: block; }
@@ -41,7 +40,6 @@
         .slide-text .timeline-meta { font-size: 1.8rem; color: #7A1523; font-weight: 700; margin-bottom: 8px; }
         @media (max-width: 768px) { .carousel-btn { width: 40px; height: 40px; font-size: 1.8rem; } }
         
-        /* Стили переключателя языка */
         .lang-switch { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; margin-left: 24px; display: flex; align-items: center; gap: 4px; }
         .lang-switch a { color: var(--color-text-light); text-decoration: none; transition: color 0.3s; }
         .lang-switch a:hover { color: var(--color-heading); }
@@ -70,7 +68,6 @@
                 <li><a href="#contacts" class="nav-cta">Записаться</a></li>
             </ul>
 
-            <!-- ★ ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА -->
             <div class="lang-switch">
                 <a href="/" class="lang-active">RU</a>
                 <span>|</span>
@@ -79,7 +76,6 @@
         </div>
     </nav>
 
-    <!-- Главный экран -->
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -95,7 +91,6 @@
         </div>
     </section>
 
-    <!-- ОБО МНЕ -->
     <section id="about" class="section bg-warm">
         <div class="container">
             <div class="about-grid">
@@ -103,7 +98,7 @@
                     <h2>Обо мне</h2>
                     <p class="lead">Меня зовут Артём. Я клинический психолог и специалист по терапии принятия и ответственности (ACT).</p>
                     
-                    <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Артём" class="about-photo-mobile" loading="lazy">
+                    <img src="{{ url_for('static', filename='images/artem_book.jpg') }}" alt="Артём" class="about-photo-mobile" loading="lazy">
                     
                     <p>Мне близок язык искусства, кино и литературы — я часто мыслю образами и метафорами. Поэтому в моей работе это естественным образом присутствует: не как метод, а как способ говорить о сложном — проще и честнее.</p>
                     <p>За пределами кабинета я увлекаюсь иностранными языками, парфюмерией и читаю много художественной литературы.</p>
@@ -113,12 +108,11 @@
                     </div>
                 </div>
                 
-                <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="Артём" class="about-photo-desktop" loading="lazy">
+                <img src="{{ url_for('static', filename='images/artem_book.jpg') }}" alt="Артём" class="about-photo-desktop" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- Запросы -->
     <section id="requests" class="section bg-sage">
         <div class="container">
             <h2>С какими запросами я работаю</h2>
@@ -173,7 +167,6 @@
         </div>
     </section>
 
-    <!-- Как я работаю -->
     <section id="work" class="section bg-warm">
         <div class="container">
             <div class="work-grid">
@@ -189,12 +182,14 @@
                 </div>
                 <div class="work-visual">
                     <div class="work-card"><h4>Что такое ACT?</h4><p>Acceptance and Commitment Therapy — терапия, которая учит принимать сложные переживания вместо борьбы с ними и строить жизнь в соответствии с вашими ценностями, а не правилами «как надо».</p></div>
+                    
+                    <!-- ★ НОВОЕ ФОТО ПОД ЦИТАТОЙ -->
+                    <img src="{{ url_for('static', filename='images/museum_run.jpg') }}" alt="Люди бегут по музею" class="work-photo" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Как записаться -->
     <section id="contacts" class="section bg-warm">
         <div class="container">
             <h2>Как записаться</h2>
@@ -229,7 +224,6 @@
         </div>
     </section>
 
-    <!-- Образование -->
     <section id="education" class="section bg-warm">
         <div class="container">
             <h2>Образование</h2>
@@ -275,26 +269,33 @@
         </div>
     </section>
 
-    <!-- Стоимость -->
     <section id="price" class="section bg-sage">
         <div class="container">
             <h2>Стоимость</h2>
-            <div class="price-cards">
-                <div class="price-card main">
-                    <div class="price-header"><h3>Индивидуальная консультация</h3><div class="price-value">3 000 ₽</div></div>
-                    <div class="price-body">
-                        <ul class="price-features">
-                            <li>Длительность — 60 минут</li>
-                            <li>Онлайн (Яндекс.Телемост)</li>
-                        </ul>
+            
+            <!-- ★ НОВАЯ ОБЕРТКА: Слева карточка, справа фото -->
+            <div class="price-layout">
+                <div class="price-cards">
+                    <div class="price-card main">
+                        <div class="price-header"><h3>Индивидуальная консультация</h3><div class="price-value">3 000 ₽</div></div>
+                        <div class="price-body">
+                            <ul class="price-features">
+                                <li>Длительность — 60 минут</li>
+                                <li>Онлайн (Яндекс.Телемост)</li>
+                            </ul>
+                        </div>
+                        <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Записаться</a></div>
                     </div>
-                    <div class="price-footer"><a href="#contacts" class="btn btn-primary btn-full">Записаться</a></div>
                 </div>
+                
+                <!-- ФОТО ЕЖИК -->
+                <img src="{{ url_for('static', filename='images/hedgehog_face.jpg') }}" alt="Лицо с ежиком" class="price-photo">
             </div>
+            
+            <p class="price-note">Стоимость единая для онлайн и очного формата. Первичная консультация оплачивается так же, как и последующие.</p>
         </div>
     </section>
 
-    <!-- Футер -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
