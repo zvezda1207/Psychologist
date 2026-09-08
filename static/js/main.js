@@ -41,63 +41,7 @@ if (burger && nav) {
     });
 }
 
-// Валидация формы
-const form = document.getElementById('feedbackForm');
-if (form) {
-    form.addEventListener('submit', function(e) {
-        const name = form.querySelector('#name').value.trim();
-        const contact = form.querySelector('#contact').value.trim();
-        const agree = form.querySelector('input[name="agree"]').checked;
-
-        if (!name || !contact || !agree) {
-            e.preventDefault();
-
-            let error = form.querySelector('.form-message.error');
-            if (!error) {
-                error = document.createElement('div');
-                error.className = 'form-message error';
-                form.insertBefore(error, form.firstChild);
-            }
-            error.textContent = 'Пожалуйста, заполните все обязательные поля и подтвердите согласие.';
-            error.style.display = 'block';
-
-            if (!name) form.querySelector('#name').style.borderColor = 'var(--color-error)';
-            if (!contact) form.querySelector('#contact').style.borderColor = 'var(--color-error)';
-            if (!agree) form.querySelector('.checkbox-label').style.color = 'var(--color-error)';
-            return;
-        }
-
-        const action = form.getAttribute('action');
-        if (action.includes('YOUR_FORM_ID')) {
-            e.preventDefault();
-            let success = form.querySelector('.form-message.success');
-            if (!success) {
-                success = document.createElement('div');
-                success.className = 'form-message success';
-                form.insertBefore(success, form.firstChild);
-            }
-            success.textContent = 'Форма пока в демо-режиме. Чтобы заявки отправлялись, нужно подключить Formspree.';
-            success.style.display = 'block';
-        }
-    });
-
-    form.querySelectorAll('input, textarea').forEach(input => {
-        input.addEventListener('input', function() {
-            this.style.borderColor = '';
-            const error = form.querySelector('.form-message.error');
-            if (error) error.style.display = 'none';
-        });
-    });
-
-    const agreeCheckbox = form.querySelector('input[name="agree"]');
-    if (agreeCheckbox) {
-        agreeCheckbox.addEventListener('change', function() {
-            form.querySelector('.checkbox-label').style.color = '';
-        });
-    }
-}
-
-// ★ КАРУСЕЛЬ С ТОЧКАМИ (Перенесена сюда для надежности)
+// ★ КАРУСЕЛЬ С ТОЧКАМИ
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.carousel-dot');
 const prevBtn = document.querySelector('.carousel-btn.prev');

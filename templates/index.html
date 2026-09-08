@@ -36,6 +36,7 @@
         .carousel-btn.prev { left: 10px; }
         .carousel-btn.next { right: 10px; }
         .slide-text { text-align: center; margin-bottom: 20px; }
+        .slide-text h3 { font-size: 2.5rem; margin-bottom: 8px; }
         .slide-text .timeline-meta { font-size: 1.8rem; color: #7A1523; font-weight: 700; margin-bottom: 8px; }
         @media (max-width: 768px) { .carousel-btn { width: 40px; height: 40px; font-size: 1.8rem; } }
         
@@ -201,7 +202,6 @@
                         <h3>Самый простой</h3>
                         <p>Напишите в Telegram или WhatsApp одно любое слово, например «Здравствуйте», - я отвечу, и мы вместе подберём удобное время.</p>
                         
-                        <!-- ★ НОВЫЙ БЛОК КНОПОК -->
                         <div class="step-actions">
                             <a href="https://t.me/liblikassid" class="btn btn-small btn-outline" target="_blank">Написать в Telegram</a>
                             <a href="https://wa.me/79526041865" class="btn btn-small btn-outline" target="_blank">Написать в WhatsApp</a>
@@ -216,18 +216,10 @@
             <div id="contact-form" class="contact-form-wrapper">
                 <h3>Оставить заявку</h3>
                 <p class="form-hint">Заполните поля ниже - я свяжусь с вами сам. Никаких обязательств.</p>
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="feedbackForm">
-                    <div class="form-row">
-                        <div class="form-group"><label for="name">Как к вам обращаться</label><input type="text" id="name" name="name" placeholder="Можно псевдоним" required></div>
-                        <div class="form-group"><label for="contact">Контакт для связи</label><input type="text" id="contact" name="contact" placeholder="Telegram, WhatsApp или email" required></div>
-                    </div>
-                    <div class="form-group"><label for="message">Что вас беспокоит <span class="optional">(необязательно)</span></label><textarea id="message" name="message" rows="4" placeholder="Можно написать кратко или оставить пустым..."></textarea></div>
-                    <div class="form-privacy">
-                        <label class="checkbox-label"><input type="checkbox" name="agree" required><span class="checkmark"></span><span class="checkbox-text">Я согласен(а) с <a href="/privacy" target="_blank">политикой конфиденциальности</a> и обработкой моих персональных данных</span></label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
-                    <p class="form-security">🔒 Ваши данные передаются по защищённому соединению и не передаются третьим лицам.</p>
-                </form>
+                
+                <!-- GOOGLE FORM -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9zi_X9lrepHCUzwScLHVy6FATu-QeVqWKvmfEn17F4lDBAA/viewform?embedded=true" width="640" height="1027" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                
             </div>
             <div class="format-note"><p>💬 Консультации проходят <strong>онлайн (Яндекс.Телемост)</strong>.</p></div>
         </div>

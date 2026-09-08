@@ -485,3 +485,91 @@ a:hover { color: var(--color-accent-dark); }
         text-align: center !important;
     }
 }
+
+/* ============================================
+   АДАПТИВНАЯ GOOGLE ФОРМА (МОБИЛЬНЫЕ)
+   ============================================ */
+.contact-form-wrapper iframe {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 900px !important;
+}
+
+/* Для очень маленьких экранов (телефоны) */
+@media (max-width: 768px) {
+    .contact-form-wrapper iframe {
+        min-height: 700px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-wrapper iframe {
+        min-height: 650px !important;
+    }
+}
+
+/* ============================================
+   ДОБАВЛЕНИЕ ЗАПАСА ВЫСОТЫ ДЛЯ GOOGLE ФОРМЫ
+   ============================================ */
+.contact-form-wrapper iframe {
+    min-height: 1200px !important;  /* Общий запас высоты */
+}
+
+@media (max-width: 768px) {
+    .contact-form-wrapper iframe {
+        min-height: 1000px !important; /* Для планшетов */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-wrapper iframe {
+        min-height: 900px !important; /* Для телефонов */
+    }
+}
+
+/* ============================================
+   УВЕЛИЧЕНИЕ ШРИФТА НА IPAD PRO (800-1024px)
+   ============================================ */
+@media (min-width: 800px) and (max-width: 1024px) {
+    .logo {
+        font-size: 3rem !important;
+    }
+
+    .nav-links a {
+        font-size: 2.6rem !important;
+    }
+
+    .nav-links .nav-cta {
+        font-size: 2.4rem !important;
+    }
+
+    /* Основной текст */
+    body {
+        font-size: 2rem !important;
+    }
+
+    /* Заголовки секций */
+    .section h2 {
+        font-size: 4.2rem !important;
+    }
+
+    /* Текст в карточках, шагах и обо мне */
+    .about-text p,
+    .social-note p,
+    .contact-step p,
+    .request-card p,
+    .work-text p {
+        font-size: 2rem !important;
+    }
+
+    /* Заголовки внутри карточек */
+    .request-card h3,
+    .contact-step h3 {
+        font-size: 3rem !important;
+    }
+
+    /* Цитата в блоке «Обо мне» */
+    .about-quote blockquote {
+        font-size: 2.2rem !important;
+    }
+}
