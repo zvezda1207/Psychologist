@@ -1,0 +1,16 @@
+PassengerEnabled on
+PassengerBaseURI /
+PassengerAppRoot /home/USERNAME/WWW_FOLDER
+PassengerPython /home/USERNAME/WWW_FOLDER/venv/bin/python
+PassengerAppEnv production
+
+# Если у вас приложение работает не в корне, укажите путь к app.py или main.py
+# Но обычно на Beget этой настройки достаточно.
+
+# Отключаем листинг папок (чтобы никто не видел структуру сайта)
+Options -Indexes
+
+# Защита от доступа к конфигурационным файлам
+<FilesMatch "\.(env|py|json)$">
+    Require all denied
+</FilesMatch>
