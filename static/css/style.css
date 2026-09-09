@@ -528,48 +528,63 @@ a:hover { color: var(--color-accent-dark); }
 }
 
 /* ============================================
-   УВЕЛИЧЕНИЕ ШРИФТА НА IPAD PRO (800-1024px)
+   ИДЕАЛЬНАЯ НАСТРОЙКА ДЛЯ ПЛАНШЕТОВ (800-1024px)
    ============================================ */
 @media (min-width: 800px) and (max-width: 1024px) {
-    .logo {
-        font-size: 3rem !important;
-    }
-
-    .nav-links a {
-        font-size: 2.6rem !important;
-    }
-
-    .nav-links .nav-cta {
-        font-size: 2.4rem !important;
-    }
-
-    /* Основной текст */
-    body {
-        font-size: 2rem !important;
-    }
-
-    /* Заголовки секций */
-    .section h2 {
-        font-size: 4.2rem !important;
-    }
+    /* Основные шрифты */
+    .logo { font-size: 3rem !important; }
+    body { font-size: 2rem !important; }
+    .section h2 { font-size: 4.2rem !important; }
 
     /* Текст в карточках, шагах и обо мне */
     .about-text p,
     .social-note p,
     .contact-step p,
-    .request-card p,
-    .work-text p {
-        font-size: 2rem !important;
+    .work-text p,
+    .request-card p {
+        font-size: 1.6rem !important;
     }
 
     /* Заголовки внутри карточек */
     .request-card h3,
     .contact-step h3 {
-        font-size: 3rem !important;
+        font-size: 2.4rem !important;
     }
 
-    /* Цитата в блоке «Обо мне» */
-    .about-quote blockquote {
-        font-size: 2.2rem !important;
+    /* Блок «Как записаться» */
+    .contact-steps {
+        grid-template-columns: 1fr !important;
+        max-width: 700px !important;
+        margin: 0 auto 40px !important;
+    }
+
+    /* ★ КАРТОЧКИ: Копируем мобильную сетку (двухколоночную) */
+    .requests-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 20px !important;
+    }
+
+    .request-card {
+        width: calc(50% - 10px) !important; /* Две колонки, как на мобильных, но шире */
+    }
+
+    /* Увеличиваем высоту под крупные изображения */
+    .request-icon {
+        height: 280px !important;
+    }
+
+    /* Фото в «Обо мне» */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    .about-photo-desktop {
+        display: block !important;
+        width: 100% !important;
+        max-width: 550px !important;
+        height: auto !important;
+        margin: 30px auto 0 !important;
     }
 }
