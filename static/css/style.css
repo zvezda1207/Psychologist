@@ -274,7 +274,12 @@ a:hover { color: var(--color-accent-dark); }
 .price-card.main { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow-hover); max-width: 420px; width: 100%; overflow: hidden; border: 1px solid var(--color-border); }
 .price-header { background-color: var(--color-accent); color: var(--color-white); padding: 36px 32px; text-align: center; }
 .price-header h3 { color: var(--color-white); font-size: 1.8rem; margin-bottom: 12px; }
-.price-value { font-size: 4rem !important; font-weight: 700; color: var(--color-white) !important; }
+.price-value { 
+    font-family: 'Inter', sans-serif !important;
+    font-size: 4rem !important; 
+    font-weight: 700; 
+    color: var(--color-white) !important; 
+}
 .price-body { padding: 32px; }
 .price-features { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 .price-features li { padding-left: 28px; position: relative; font-size: 1.4rem; font-weight: 700; }
