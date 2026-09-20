@@ -37,5 +37,9 @@ def apple_touch_icon():
         mimetype='image/png'
     )
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.root_path, 'sitemap.xml', mimetype='application/xml')
+
 if __name__ == '__main__':
     app.run(debug=True)
