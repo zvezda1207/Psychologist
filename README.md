@@ -34,6 +34,8 @@
 ---
 
 ## 📂 Структура проекта
+
+```
 psychologist/
 ├── app.py # Главный файл Flask (маршруты)
 ├── requirements.txt # Зависимости
@@ -50,8 +52,7 @@ psychologist/
 ├── index_en.html # Главная (EN)
 ├── privacy.html # Политика (RU)
 └── privacy_en.html # Политика (EN)
-
-text
+```
 
 ---
 
@@ -74,15 +75,20 @@ text
 
 <p align="center">
   <img src="screenshots/hero.png" width="400" alt="Главная страница">
+  &nbsp;&nbsp;
   <img src="screenshots/about.png" width="400" alt="Обо мне">
 </p>
+
 <p align="center">
   <img src="screenshots/requests.png" width="400" alt="Запросы">
+  &nbsp;&nbsp;
   <img src="screenshots/education.png" width="400" alt="Образование">
 </p>
+
 <p align="center">
-  <img src="screenshots/mobile.png" width="250" alt="Мобильная версия">
-  <img src="screenshots/mobile_requests.png" width="250" alt="Мобильная версия - запросы">
+  <img src="screenshots/mobile.png" width="220" alt="Мобильная версия — главная">
+  &nbsp;&nbsp;
+  <img src="screenshots/mobile_requests.png" width="220" alt="Мобильная версия — запросы">
 </p>
 
 ---
